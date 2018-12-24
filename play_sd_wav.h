@@ -27,12 +27,15 @@
 #ifndef play_sd_wav_h_
 #define play_sd_wav_h_
 
-// Vindor
-#ifdef SDCARD
-
 #include "Arduino.h"
 #include "AudioStream.h"
+
+// Vindor
+#ifdef USE_SDCARD
+#include "SdLib.h"
+#else
 #include "SD.h"
+#endif
 
 class AudioPlaySdWav : public AudioStream
 {
@@ -64,8 +67,5 @@ private:
 	uint8_t state_play;
 	uint8_t leftover_bytes;
 };
-
-// Vindor
-#endif
 
 #endif
