@@ -27,10 +27,6 @@
 #include <Arduino.h>
 #include "control_sgtl5000.h"
 // VINDOR
-<<<<<<< HEAD
-=======
-// #include "Wire.h"
->>>>>>> FETCH_HEAD
 #include "MyWire.h"
 
 #define CHIP_ID				0x0000
