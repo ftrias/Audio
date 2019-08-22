@@ -529,8 +529,7 @@ bool AudioControlSGTL5000::enable(void)
 	write(CHIP_ANA_CTRL, 0x0137);  // enable zero cross detectors
 	write(CHIP_ANA_POWER, 0x40FF); // power up: lineout, hp, adc, dac
 	write(CHIP_DIG_POWER, 0x0073); // power up all digital stuff
-	// This delay seems superfluous so remove it -- FT Vindor
-	// delay(400);
+	delay(400);
 	write(CHIP_LINE_OUT_VOL, 0x1D1D); // default approx 1.3 volts peak-to-peak
 	write(CHIP_CLK_CTRL, 0x0004);  // 44.1 kHz, 256*Fs
 	write(CHIP_I2S_CTRL, 0x0130); // SCLK=32*Fs, 16bit, I2S format
